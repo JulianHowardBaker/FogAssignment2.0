@@ -11,6 +11,7 @@ We simple wish to empower our customers with the tools to enliven their own live
 
 So cry havoc and let slip the dogs of war!
 
--Sean Altoft Sr., Horse Administrator and Student of Drain Surgery at MIT
+-Sean Altoft Sr., Part Time Horse Administrator and Student of Drain Surgery at MIT
+
 ###################################
 
