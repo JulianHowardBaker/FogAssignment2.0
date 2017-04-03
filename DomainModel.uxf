@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>220</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Order
+--
+id: int
+date: date
+price: int
+carport: carport</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>360</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Preorder
+--
+id: int
+date: date
+carport: carport</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>470</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Material
+--
+id: int
+title: String
+price.p.unit: int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>380</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>(Material List)
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>240</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Carport
+--
+id: int 
+Height: double
+Width: double
+Material List: Material
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>90</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+id: int
+email: String
+address(?): String
+phone: int
+userName: String
+password: String
+gender: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>120</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Receipt
+--
+id: int
+date: date
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
