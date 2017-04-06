@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS fog;
 USE fog;
 
-drop table IF EXISTS ProductionLine, Order_Has_Inventory, Cart_Has_Inventory, Employee_Warehouse, Warehouse_Has_Inventory, Warehouse, Inventory, Cart, CreditCard, InvoiceHistory, Invoice, Orders, Address, Employee, User_Roles, Roles, UserSession, User, UserInfo;
+drop table IF EXISTS User_Has_UserInfo, ProductionLine, Order_Has_Inventory, Cart_Has_Inventory, Employee_Warehouse, Warehouse_Has_Inventory, Warehouse, Inventory, Cart, CreditCard, InvoiceHistory, Invoice, Orders, Address, Employee, User_Roles, Roles, UserSession, User, UserInfo;
 
 create table UserInfo(
 	UserInfo_ID int(7) AUTO_INCREMENT,
@@ -16,11 +16,16 @@ create table User(
 	User_ID int(7) AUTO_INCREMENT,
 	Username varchar(15) UNIQUE NOT NULL,
 	User_Pass varchar(15) NOT NULL,
-    Timestamp timestamp NOT NULL,
-	Visits_AMT int(10),
-    UserInfo_ID int(7),
-	PRIMARY KEY(User_ID),
-    FOREIGN KEY(UserInfo_ID) REFERENCES UserInfo(UserInfo_ID)
+    Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	Visits_AMT int(10) default 0,
+	PRIMARY KEY(User_ID)
+);
+
+create table User_Has_UserInfo(
+	UserInfo_ID int(7),
+    User_ID int(7), 
+    FOREIGN KEY(UserInfo_ID) REFERENCES UserInfo(UserInfo_ID),
+    FOREIGN KEY(User_ID) REFERENCES User(User_ID)
 );
 
 create table UserSession(
@@ -50,9 +55,7 @@ create table Employee(
 	EMPNO int(7),
     Hire_Date date,
     Work_DEPT varchar(15) NOT NULL,
-    UserInfo_ID int(7),
-    PRIMARY KEY(EMPNO),
-    FOREIGN KEY(UserInfo_ID) REFERENCES UserInfo(UserInfo_ID)
+    PRIMARY KEY(EMPNO)
 );
 
 create table Address(	
@@ -70,6 +73,7 @@ create table Orders(
     Order_Date date,
     Total_Price int(10),
     User_ID int(7),
+    Status enum('Pending', 'Cancelled', 'Confirmed'),
 	PRIMARY KEY(Order_ID),
 	FOREIGN KEY(User_ID) REFERENCES User(User_ID)
 );
@@ -164,11 +168,18 @@ create table ProductionLine(
     FOREIGN KEY(EMPNO) REFERENCES Employee(EMPNO)
 );
 
+insert into UserInfo values
+  (1, 'Peter', 'Peterson', 'Male', 'Petey@gmail.com');
+  
+
+
 insert into Roles values
   (1,'Admin');
 insert into Roles values
   (2,'Employee');
 insert into Roles values
   (3,'Customer');
+  
+  
   
   commit;
