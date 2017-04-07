@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS fog;
 USE fog;
 
-drop table IF EXISTS User_Has_UserInfo, ProductionLine, Order_Has_Inventory, Cart_Has_Inventory, Employee_Warehouse, Warehouse_Has_Inventory, Warehouse, Inventory, Cart, CreditCard, InvoiceHistory, Invoice, Orders, Address, Employee, User_Roles, Roles, UserSession, User, UserInfo;
+drop table IF EXISTS User_Has_UserInfo, Orders_Has_Carport, ProductionLine, Carport_Has_Inventory, Employee_Warehouse, Warehouse_Has_Inventory, Warehouse, Inventory, Cart, CreditCard, InvoiceHistory, Invoice, Orders, Address, Employee, User_Roles, Roles, UserSession, User, UserInfo, Carport;
 
 create table UserInfo(
 	UserInfo_ID int(7) AUTO_INCREMENT,
@@ -12,8 +12,14 @@ create table UserInfo(
     PRIMARY KEY(UserInfo_ID)
 );
 
+create table Carport(
+	Carport_ID int(7) AUTO_INCREMENT,
+    Title varchar (15),
+    PRIMARY KEY(Carport_ID)
+);
+
 create table User(
-	User_ID int(7) AUTO_INCREMENT,
+	User_ID int(7) AUTO_INCREMENT NOT NULL,
 	Username varchar(15) UNIQUE NOT NULL,
 	User_Pass varchar(15) NOT NULL,
     Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -135,19 +141,17 @@ create table Warehouse_Has_Inventory(
     FOREIGN KEY(Inventory_ID) REFERENCES Inventory(Inventory_ID)
 );
 
-create table Cart_Has_Inventory(
-	Cart_ID int(7),
-    Inventory_ID int(7),
-    Inventory_AMT int(7),
-    FOREIGN KEY(Cart_ID) REFERENCES Cart(Cart_ID),
-    FOREIGN KEY(Inventory_ID) REFERENCES Inventory(Inventory_ID)
+create table Orders_Has_Carport(
+	Carport_ID int(7),
+    Order_ID int(7),
+    FOREIGN KEY(Carport_ID) REFERENCES Carport(Carport_ID),
+    FOREIGN KEY(Order_ID) REFERENCES Orders(Order_ID)
 );
-
-create table Order_Has_Inventory(
-	Order_ID int(7),
+create table Carport_Has_Inventory(
+	Carport_ID int(7),
     Inventory_ID int(7),
     Inventory_AMT int(7),
-    FOREIGN KEY(Order_ID) REFERENCES Orders(Order_ID),
+    FOREIGN KEY(Carport_ID) REFERENCES Carport(Carport_ID),
     FOREIGN KEY(Inventory_ID) REFERENCES Inventory(Inventory_ID)
 );
 
@@ -171,7 +175,8 @@ create table ProductionLine(
 insert into UserInfo values
   (1, 'Peter', 'Peterson', 'Male', 'Petey@gmail.com');
   
-
+insert into User(Username, User_Pass) values
+  ('Peter', 'Peter');
 
 insert into Roles values
   (1,'Admin');
