@@ -238,66 +238,185 @@ insert into Inventory(Inventory_ID, Inventory_Title, Price) values
 insert into Inventory(Inventory_ID, Inventory_Title, Price) values
   (28, 'vinkelbeslag 35', 20);
   
+insert into Inventory values
+  (29, '25x150 mm. trykimp. Bræt', 480, 50);
+insert into Inventory values
+  (30, '25x150 mm. trykimp. Bræt', 600, 50);
+insert into Inventory values
+  (31, '25x150 mm. trykimp Bræt', 540, 50);
+insert into Inventory (Inventory_ID, Inventory_Title, Price) values
+  (32, 'fædigskåret (byg-selv spær)', 50);
+insert into Inventory values
+  (33, '45x95 Reglar ubh.', 240, 50);
+insert into Inventory values
+  (34, '45x95 Reglar ubh', 360, 50);
+insert into Inventory values
+  (35, '19x100 mm. trykimp. Bræt', 480, 50);
+insert into Inventory values
+  (36, '19x100 mm. trykimp. Bræt', 240, 50);
+insert into Inventory values
+  (37, '25x50 mm. trykimp. Bræt', 540, 50);
+insert into Inventory values
+  (38, '38x73 mm. taglægte T1', 540, 50);
+insert into Inventory values
+  (39, '38x73 mm. taglægte T1', 420, 50);
+  
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (40, 'B & C Dobbelt -s sort', 30); 
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (41, 'B & C Rygsten sort', 30);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (42, 'B & C Toplægte holder', 30);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (43, 'B & C rygstensbeslag.', 30);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (44, 'B & C tagstens bindere & nakkekroge', 30);
+  
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (45, 'Staldørsgreb 50x75', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (46, 'vinkelbeslag', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (47, '4,5 x 60 mm. Skruer 200stk.', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (48, '5,0 x 40 mm. beslagskruer  250stk.', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (49, '5,0 x 100 mm. skruer 100 stk.', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (50, 'firkantskiver 40x40x11mm', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (51, '4,5 x 70 mm. Skruer 200stk.', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (52, '4,5 x 50mm. Skruer 350stk.', 20);
+
+
 insert into Carport values
   (1, 'Standard Cow Shed');
+insert into Carport values
+  (2, 'Enterprise Edition Shed');
   
 insert into Carport_Has_Inventory values
   (1, 1, 4);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 2, 4);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 3, 2);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 4, 4);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 5, 1);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 6, 12);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 7, 4);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 8, 17);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 9, 1);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 10, 11);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 11, 200);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 12, 4);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 13, 2);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 14, 6);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 15, 6);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 16, 3);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 17, 2);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 18, 15);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 19, 15);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 20, 1);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 21, 3);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1,22, 18);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 23, 12);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 24, 2);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 25, 2);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 26, 1);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 27, 2);
-  insert into Carport_Has_Inventory values
+insert into Carport_Has_Inventory values
   (1, 28, 32);
-    
+
+insert into carport_has_inventory values
+  (2, 29, 2);
+insert into carport_has_inventory values
+  (2, 30, 2);
+insert into carport_has_inventory values
+  (2, 31, 1);
+insert into carport_has_inventory values
+  (2, 32, 1);
+insert into carport_has_inventory values
+  (2, 10, 9);
+insert into carport_has_inventory values
+  (2, 9, 3);
+insert into carport_has_inventory values
+  (2, 33, 4);
+insert into carport_has_inventory values
+  (2, 34, 6);
+insert into carport_has_inventory values
+  (2, 35, 2);
+insert into carport_has_inventory values
+  (2, 36, 38);
+insert into carport_has_inventory values
+  (2, 11, 148);
+insert into carport_has_inventory values
+  (2, 37, 3);
+insert into carport_has_inventory values
+  (2, 38, 1);
+insert into carport_has_inventory values
+  (2, 39, 23);
+
+insert into carport_has_inventory values
+  (2, 40, 300);
+insert into carport_has_inventory values
+  (2, 41, 21);
+insert into carport_has_inventory values
+  (2, 42, 8);
+insert into carport_has_inventory values
+  (2, 43, 21);
+insert into carport_has_inventory values
+  (2, 44, 2);
+  
+insert into carport_has_inventory values
+  (2, 18, 8);
+insert into carport_has_inventory values
+  (2, 19, 8);
+insert into carport_has_inventory values
+  (2, 45, 1);
+insert into carport_has_inventory values
+  (2, 27, 2);
+insert into carport_has_inventory values
+  (2, 46, 20);
+insert into carport_has_inventory values
+  (2, 47, 1);
+insert into carport_has_inventory values
+  (2, 48, 1);
+insert into carport_has_inventory values
+  (2, 49, 2);
+insert into carport_has_inventory values
+  (2, 22, 20);
+insert into carport_has_inventory values
+  (2, 50, 20);
+insert into carport_has_inventory values
+  (2, 51, 3);
+insert into carport_has_inventory values
+  (2, 52, 2);
+  
 insert into User(Username, User_Pass) values
   ('Peter', 'Peter');
   
