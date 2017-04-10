@@ -14,7 +14,7 @@ create table UserInfo(
 
 create table Carport(
 	Carport_ID int(7) AUTO_INCREMENT,
-    Title varchar (15),
+    Title varchar (50),
     PRIMARY KEY(Carport_ID)
 );
 
@@ -120,7 +120,8 @@ create table Cart(
 
 create table Inventory(
 	Inventory_ID int(7) AUTO_INCREMENT,
-    Inventory_Title varchar(15) NOT NULL,
+    Inventory_Title varchar(50) NOT NULL,
+    Length int(10),
     Price int(7),
     PRIMARY KEY(Inventory_ID)
 );
@@ -129,6 +130,7 @@ create table Warehouse(
 	Warehouse_ID int(7) AUTO_INCREMENT,
     Warehouse_Title varchar(15) NOT NULL,
     Address_ID  int(7),
+    RoofType enum('Flat', 'Standard'),
     PRIMARY KEY(Warehouse_ID),
     FOREIGN KEY(Address_ID) REFERENCES Address(Address_ID)
 );
@@ -172,18 +174,143 @@ create table ProductionLine(
     FOREIGN KEY(EMPNO) REFERENCES Employee(EMPNO)
 );
 
-insert into UserInfo values
-  (1, 'Peter', 'Peterson', 'Male', 'Petey@gmail.com');
-  
-insert into User(Username, User_Pass) values
-  ('Peter', 'Peter');
-
 insert into Roles values
   (1,'Admin');
 insert into Roles values
   (2,'Employee');
 insert into Roles values
   (3,'Customer');
+  
+insert into Inventory values
+  (1, '25x200 mm. trykimp. Brædt', 360, 50);
+insert into Inventory values
+  (2, '25x200 mm. trykimp. Brædt', 540, 50);
+insert into Inventory values
+  (3, '25x125 mm. trykimp. Brædt', 360, 50);
+insert into Inventory values
+  (4, '25x125 mm. trykimp. Brædt', 540, 50);
+insert into Inventory values
+  (5, '38x73 mm. Lægte ubh.', 420, 50);
+insert into Inventory values
+  (6, '45x95 mm. Reglar ub.', 270, 50);
+insert into Inventory values
+  (7, '45x95 mm. Reglar ub.', 240, 50);
+insert into Inventory values
+  (8, '45x195 mm. spærtræ ubh.', 600, 50);
+insert into Inventory values
+  (9, '45x195 mm. spærtræ ubh.', 480, 50);
+insert into Inventory values
+  (10, '97x97 mm. trykimp. Stolpe', 300, 50);
+insert into Inventory values
+  (11, '19x100 mm. trykimp. Brædt', 210, 50);
+insert into Inventory values
+  (12, '19x100mm trykimp. Brædt', 540, 50);
+insert into Inventory values
+  (13, '19x100mm trykimp. Brædt', 360, 50);
+insert into Inventory values
+  (14, 'Plastmo Ecolite blåtonet', 600, 50);
+insert into Inventory values
+  (15, 'Plastmo Ecolite blåtonet', 360, 50);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (16, 'Plastmo bundskruer 200 stk.', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (17, 'hulbånd 1x20mm. 10 mtr.', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (18, 'universal 190mm højre', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (19, 'universal 190mm venstre', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (20, '4,5x60 mm. skruer 200 stk', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (21, '4,0x50mm. beslagskruer 250 stk.', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (22, 'bræddebolt 10x120mm.', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (23, 'firkantskiver 40x40x11mm.', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (24, '4,5x70mm. Skruer 400stk', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (25, '4,5x50mm. Skruer 300stk', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (26, 'stalddørsgreb 50x75', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (27, 't hængsel 390 mm.', 20);
+insert into Inventory(Inventory_ID, Inventory_Title, Price) values
+  (28, 'vinkelbeslag 35', 20);
+  
+insert into Carport values
+  (1, 'Standard Cow Shed');
+  
+insert into Carport_Has_Inventory values
+  (1, 1, 4);
+  insert into Carport_Has_Inventory values
+  (1, 2, 4);
+  insert into Carport_Has_Inventory values
+  (1, 3, 2);
+  insert into Carport_Has_Inventory values
+  (1, 4, 4);
+  insert into Carport_Has_Inventory values
+  (1, 5, 1);
+  insert into Carport_Has_Inventory values
+  (1, 6, 12);
+  insert into Carport_Has_Inventory values
+  (1, 7, 4);
+  insert into Carport_Has_Inventory values
+  (1, 8, 17);
+  insert into Carport_Has_Inventory values
+  (1, 9, 1);
+  insert into Carport_Has_Inventory values
+  (1, 10, 11);
+  insert into Carport_Has_Inventory values
+  (1, 11, 200);
+  insert into Carport_Has_Inventory values
+  (1, 12, 4);
+  insert into Carport_Has_Inventory values
+  (1, 13, 2);
+  insert into Carport_Has_Inventory values
+  (1, 14, 6);
+  insert into Carport_Has_Inventory values
+  (1, 15, 6);
+  insert into Carport_Has_Inventory values
+  (1, 16, 3);
+  insert into Carport_Has_Inventory values
+  (1, 17, 2);
+  insert into Carport_Has_Inventory values
+  (1, 18, 15);
+  insert into Carport_Has_Inventory values
+  (1, 19, 15);
+  insert into Carport_Has_Inventory values
+  (1, 20, 1);
+  insert into Carport_Has_Inventory values
+  (1, 21, 3);
+  insert into Carport_Has_Inventory values
+  (1,22, 18);
+  insert into Carport_Has_Inventory values
+  (1, 23, 12);
+  insert into Carport_Has_Inventory values
+  (1, 24, 2);
+  insert into Carport_Has_Inventory values
+  (1, 25, 2);
+  insert into Carport_Has_Inventory values
+  (1, 26, 1);
+  insert into Carport_Has_Inventory values
+  (1, 27, 2);
+  insert into Carport_Has_Inventory values
+  (1, 28, 32);
+    
+insert into User(Username, User_Pass) values
+  ('Peter', 'Peter');
+  
+insert into User_Roles values
+  (1, 3);
+  
+insert into UserInfo values
+  (1, 'Peter', 'Peterson', 'Male', 'Petey@gmail.com');
+
+insert into User_Has_UserInfo values
+  (1, 1);
+  
+
   
   
   
