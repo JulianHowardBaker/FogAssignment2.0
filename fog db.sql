@@ -294,6 +294,8 @@ insert into Carport (Carport_ID, Title) values
   (1, 'Standard Cow Shed');
 insert into Carport (Carport_ID, Title) values
   (2, 'Enterprise Edition Shed');
+insert into Carport (Carport_ID, Title) values
+  (3, 'Dummy Shed');  
   
 insert into Carport_Has_Inventory values
   (1, 1, 4);
