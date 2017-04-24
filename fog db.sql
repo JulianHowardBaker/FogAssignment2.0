@@ -13,8 +13,9 @@ create table UserInfo(
 );
 
 create table Carport(
-	Carport_ID int(7) AUTO_INCREMENT,
-    Title varchar (50),
+	Carport_ID int(7),
+    Title varchar(50),
+    UUID varchar(30) UNIQUE,
     PRIMARY KEY(Carport_ID)
 );
 
@@ -288,11 +289,10 @@ insert into Inventory(Inventory_ID, Inventory_Title, Price) values
   (51, '4,5 x 70 mm. Skruer 200stk.', 20);
 insert into Inventory(Inventory_ID, Inventory_Title, Price) values
   (52, '4,5 x 50mm. Skruer 350stk.', 20);
-
-
-insert into Carport values
+  
+insert into Carport (Carport_ID, Title) values
   (1, 'Standard Cow Shed');
-insert into Carport values
+insert into Carport (Carport_ID, Title) values
   (2, 'Enterprise Edition Shed');
   
 insert into Carport_Has_Inventory values
