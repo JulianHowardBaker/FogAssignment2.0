@@ -13,9 +13,12 @@ create table UserInfo(
 );
 
 create table Carport(
-	Carport_ID int(7),
+	Carport_ID int(7) AUTO_INCREMENT NOT NULL,
     Title varchar(50),
-    UUID varchar(30) UNIQUE,
+    UUID varchar(50) UNIQUE,
+    Height int(10),
+    Width int(10),
+    Length int(10),
     PRIMARY KEY(Carport_ID)
 );
 
