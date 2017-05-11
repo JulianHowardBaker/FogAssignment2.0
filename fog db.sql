@@ -19,6 +19,8 @@ create table Carport(
     Height int(10),
     Width int(10),
     Length int(10),
+    CPType varchar(30),
+    RoofType varchar(30),    
     PRIMARY KEY(Carport_ID)
 );
 
@@ -125,7 +127,12 @@ create table Cart(
 create table Inventory(
 	Inventory_ID int(7) AUTO_INCREMENT,
     Inventory_Title varchar(50) NOT NULL,
-    Length int(10),
+    Length int(15),
+    Depth int(15),
+    Width float(15),
+    Material varchar(30),
+    Type varchar(30),
+    Box_AMT int(10),
     Price int(7),
     PRIMARY KEY(Inventory_ID)
 );
@@ -185,243 +192,93 @@ insert into Roles values
 insert into Roles values
   (3,'Customer');
   
-insert into Inventory values
-  (1, '25x200 mm. trykimp. Brædt', 360, 50);
-insert into Inventory values
-  (2, '25x200 mm. trykimp. Brædt', 540, 50);
-insert into Inventory values
-  (3, '25x125 mm. trykimp. Brædt', 360, 50);
-insert into Inventory values
-  (4, '25x125 mm. trykimp. Brædt', 540, 50);
-insert into Inventory values
-  (5, '38x73 mm. Lægte ubh.', 420, 50);
-insert into Inventory values
-  (6, '45x95 mm. Reglar ub.', 270, 50);
-insert into Inventory values
-  (7, '45x95 mm. Reglar ub.', 240, 50);
-insert into Inventory values
-  (8, '45x195 mm. spærtræ ubh.', 600, 50);
-insert into Inventory values
-  (9, '45x195 mm. spærtræ ubh.', 480, 50);
-insert into Inventory values
-  (10, '97x97 mm. trykimp. Stolpe', 300, 50);
-insert into Inventory values
-  (11, '19x100 mm. trykimp. Brædt', 210, 50);
-insert into Inventory values
-  (12, '19x100mm trykimp. Brædt', 540, 50);
-insert into Inventory values
-  (13, '19x100mm trykimp. Brædt', 360, 50);
-insert into Inventory values
-  (14, 'Plastmo Ecolite blåtonet', 600, 50);
-insert into Inventory values
-  (15, 'Plastmo Ecolite blåtonet', 360, 50);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (16, 'Plastmo bundskruer 200 stk.', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (17, 'hulbånd 1x20mm. 10 mtr.', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (18, 'universal 190mm højre', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (19, 'universal 190mm venstre', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (20, '4,5x60 mm. skruer 200 stk', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (21, '4,0x50mm. beslagskruer 250 stk.', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (22, 'bræddebolt 10x120mm.', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (23, 'firkantskiver 40x40x11mm.', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (24, '4,5x70mm. Skruer 400stk', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (25, '4,5x50mm. Skruer 300stk', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (26, 'stalddørsgreb 50x75', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (27, 't hængsel 390 mm.', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (28, 'vinkelbeslag 35', 20);
-  
-insert into Inventory values
-  (29, '25x150 mm. trykimp. Bræt', 480, 50);
-insert into Inventory values
-  (30, '25x150 mm. trykimp. Bræt', 600, 50);
-insert into Inventory values
-  (31, '25x150 mm. trykimp Bræt', 540, 50);
-insert into Inventory (Inventory_ID, Inventory_Title, Price) values
-  (32, 'fædigskåret (byg-selv spær)', 50);
-insert into Inventory values
-  (33, '45x95 Reglar ubh.', 240, 50);
-insert into Inventory values
-  (34, '45x95 Reglar ubh', 360, 50);
-insert into Inventory values
-  (35, '19x100 mm. trykimp. Bræt', 480, 50);
-insert into Inventory values
-  (36, '19x100 mm. trykimp. Bræt', 240, 50);
-insert into Inventory values
-  (37, '25x50 mm. trykimp. Bræt', 540, 50);
-insert into Inventory values
-  (38, '38x73 mm. taglægte T1', 540, 50);
-insert into Inventory values
-  (39, '38x73 mm. taglægte T1', 420, 50);
-  
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (40, 'B & C Dobbelt -s sort', 30); 
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (41, 'B & C Rygsten sort', 30);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (42, 'B & C Toplægte holder', 30);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (43, 'B & C rygstensbeslag.', 30);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (44, 'B & C tagstens bindere & nakkekroge', 30);
-  
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (45, 'Staldørsgreb 50x75', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (46, 'vinkelbeslag', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (47, '4,5 x 60 mm. Skruer 200stk.', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (48, '5,0 x 40 mm. beslagskruer  250stk.', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (49, '5,0 x 100 mm. skruer 100 stk.', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (50, 'firkantskiver 40x40x11mm', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (51, '4,5 x 70 mm. Skruer 200stk.', 20);
-insert into Inventory(Inventory_ID, Inventory_Title, Price) values
-  (52, '4,5 x 50mm. Skruer 350stk.', 20);
-  
-insert into Carport (Carport_ID, Title) values
-  (1, 'Standard Cow Shed');
-insert into Carport (Carport_ID, Title) values
-  (2, 'Enterprise Edition Shed');
-insert into Carport (Carport_ID, Title) values
-  (3, 'Dummy Shed');  
-  
-insert into Carport_Has_Inventory values
-  (1, 1, 4);
-insert into Carport_Has_Inventory values
-  (1, 2, 4);
-insert into Carport_Has_Inventory values
-  (1, 3, 2);
-insert into Carport_Has_Inventory values
-  (1, 4, 4);
-insert into Carport_Has_Inventory values
-  (1, 5, 1);
-insert into Carport_Has_Inventory values
-  (1, 6, 12);
-insert into Carport_Has_Inventory values
-  (1, 7, 4);
-insert into Carport_Has_Inventory values
-  (1, 8, 17);
-insert into Carport_Has_Inventory values
-  (1, 9, 1);
-insert into Carport_Has_Inventory values
-  (1, 10, 11);
-insert into Carport_Has_Inventory values
-  (1, 11, 200);
-insert into Carport_Has_Inventory values
-  (1, 12, 4);
-insert into Carport_Has_Inventory values
-  (1, 13, 2);
-insert into Carport_Has_Inventory values
-  (1, 14, 6);
-insert into Carport_Has_Inventory values
-  (1, 15, 6);
-insert into Carport_Has_Inventory values
-  (1, 16, 3);
-insert into Carport_Has_Inventory values
-  (1, 17, 2);
-insert into Carport_Has_Inventory values
-  (1, 18, 15);
-insert into Carport_Has_Inventory values
-  (1, 19, 15);
-insert into Carport_Has_Inventory values
-  (1, 20, 1);
-insert into Carport_Has_Inventory values
-  (1, 21, 3);
-insert into Carport_Has_Inventory values
-  (1,22, 18);
-insert into Carport_Has_Inventory values
-  (1, 23, 12);
-insert into Carport_Has_Inventory values
-  (1, 24, 2);
-insert into Carport_Has_Inventory values
-  (1, 25, 2);
-insert into Carport_Has_Inventory values
-  (1, 26, 1);
-insert into Carport_Has_Inventory values
-  (1, 27, 2);
-insert into Carport_Has_Inventory values
-  (1, 28, 32);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 240, 100, 100, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 300, 100, 100, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 360, 100, 100, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 420, 100, 100, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 480, 100, 100, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 540, 100, 100, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 600, 100, 100, 'Brædt', 'TrykImp', 100);
+    
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 240, 45, 195, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 300, 45, 195, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 360, 45, 195, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 420, 45, 195, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 480, 45, 195, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 540, 45, 195, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 600, 45, 195, 'Brædt', 'TrykImp', 100);
+    
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 240, 38, 73, 'Brædt', 'TrykImp', 100);  
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 300, 38, 73, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 360, 38, 73, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 420, 38, 73, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 480, 38, 73, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 540, 38, 73, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 600, 38, 73, 'Brædt', 'TrykImp', 100);
 
-insert into carport_has_inventory values
-  (2, 29, 2);
-insert into carport_has_inventory values
-  (2, 30, 2);
-insert into carport_has_inventory values
-  (2, 31, 1);
-insert into carport_has_inventory values
-  (2, 32, 1);
-insert into carport_has_inventory values
-  (2, 10, 9);
-insert into carport_has_inventory values
-  (2, 9, 3);
-insert into carport_has_inventory values
-  (2, 33, 4);
-insert into carport_has_inventory values
-  (2, 34, 6);
-insert into carport_has_inventory values
-  (2, 35, 2);
-insert into carport_has_inventory values
-  (2, 36, 38);
-insert into carport_has_inventory values
-  (2, 11, 148);
-insert into carport_has_inventory values
-  (2, 37, 3);
-insert into carport_has_inventory values
-  (2, 38, 1);
-insert into carport_has_inventory values
-  (2, 39, 23);
-
-insert into carport_has_inventory values
-  (2, 40, 300);
-insert into carport_has_inventory values
-  (2, 41, 21);
-insert into carport_has_inventory values
-  (2, 42, 8);
-insert into carport_has_inventory values
-  (2, 43, 21);
-insert into carport_has_inventory values
-  (2, 44, 2);
-  
-insert into carport_has_inventory values
-  (2, 18, 8);
-insert into carport_has_inventory values
-  (2, 19, 8);
-insert into carport_has_inventory values
-  (2, 45, 1);
-insert into carport_has_inventory values
-  (2, 27, 2);
-insert into carport_has_inventory values
-  (2, 46, 20);
-insert into carport_has_inventory values
-  (2, 47, 1);
-insert into carport_has_inventory values
-  (2, 48, 1);
-insert into carport_has_inventory values
-  (2, 49, 2);
-insert into carport_has_inventory values
-  (2, 22, 20);
-insert into carport_has_inventory values
-  (2, 50, 20);
-insert into carport_has_inventory values
-  (2, 51, 3);
-insert into carport_has_inventory values
-  (2, 52, 2);
-  
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 240, 25, 150, 'Brædt', 'TrykImp', 100);   
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 300, 25, 150, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 360, 25, 150, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 420, 25, 150, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 480, 25, 150, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 540, 25, 150, 'Brædt', 'TrykImp', 100);
+insert into Inventory(Inventory_Title, Length, Depth, Width, Material, Type, Price) values
+	('TrykImp Brædt', 600, 25, 150, 'Brædt', 'TrykImp', 100);
+ 
+ insert into Inventory(Inventory_Title, Length, Width, Material, Type, Price) values
+	('Plastmo Ecolite Blåtonet', 240, 109, 'Plastmo', 'Ecolite Blåtonet', 100);
+ insert into Inventory(Inventory_Title, Length, Width, Material, Type, Price) values
+	('Plastmo Ecolite Blåtonet', 300, 109, 'Plastmo', 'Ecolite Blåtonet', 100);
+ insert into Inventory(Inventory_Title, Length, Width, Material, Type, Price) values
+	('Plastmo Ecolite Blåtonet', 360, 109, 'Plastmo', 'Ecolite Blåtonet', 100);
+ insert into Inventory(Inventory_Title, Length, Width, Material, Type, Price) values
+	('Plastmo Ecolite Blåtonet', 420, 109, 'Plastmo', 'Ecolite Blåtonet', 100);
+ insert into Inventory(Inventory_Title, Length, Width, Material, Type, Price) values
+	('Plastmo Ecolite Blåtonet', 480, 109, 'Plastmo', 'Ecolite Blåtonet', 100);
+ insert into Inventory(Inventory_Title, Length, Width, Material, Type, Price) values
+	('Plastmo Ecolite Blåtonet', 540, 109, 'Plastmo', 'Ecolite Blåtonet', 100);
+ insert into Inventory(Inventory_Title, Length, Width, Material, Type, Price) values
+	('Plastmo Ecolite Blåtonet', 60, 109, 'Plastmo', 'Ecolite Blåtonet', 100);
+    
+ insert into Inventory(Inventory_Title, Material, Type, Price) values
+    ('Vinkelbeslag 35', 'Vinkelbeslag', '35', 10);
+ insert into Inventory(Inventory_Title, Length, Width, Material, Type, Price) values
+    ('Bræddebolt', 120, 10, 'Bræddebolt', 'Bræddebolt', 10);
+ insert into Inventory(Inventory_Title, Length, Width, Material, Type, Box_AMT, Price) values
+    ('Skruer', 70, 4.5, 'Skruer', 'Skruer', 300, 10);  
+ insert into Inventory(Inventory_Title, Length, Width, Material, Type, Box_AMT, Price) values
+    ('Skruer', 60, 4.5, 'Skruer', 'Skruer', 200, 8); 
+    
+insert into Inventory(Inventory_Title, Length, Material, Type, Price) values
+    ('Aluminium Cover', 100, 'Cover', 'Aluminium', 25); 
+    
 insert into User(Username, User_Pass) values
   ('Peter', 'Peter');
   
