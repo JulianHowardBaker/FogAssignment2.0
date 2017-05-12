@@ -13,6 +13,9 @@ public class OrderProduct
 {
     private int id;
     private Order order;
-    private Product product;
+    private ProductPart Wood;
+    private ProductPart WoodRoofing;
+    private ProductPart RoofSkeleton;
+    private ProductPart FittingsScrews;
     private int count;
 }

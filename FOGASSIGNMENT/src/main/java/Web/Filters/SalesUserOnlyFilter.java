@@ -6,55 +6,47 @@
 package Web.Filters;
 
 import Domain.UserRole;
-import Web.DTO.SessionKeys;
-import Web.DTO.UserSessionDto;
 import java.io.IOException;
-import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * A filter to be used by servlets that only allow sales people in
  */
 @WebFilter("/SalesUserOnlyFilter")
-public class SalesUserOnlyFilter implements Filter
+public class SalesUserOnlyFilter extends BaseFilter
 {
-    private ServletContext context;
     
     @Override
     public void init(FilterConfig filterConfig) throws ServletException
     {
-        this.context = filterConfig.getServletContext();
+        super.init(filterConfig);
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException
     {
-        // Get session from request
-        HttpServletRequest httpRequest = (HttpServletRequest) request;
-        HttpSession session = httpRequest.getSession();
-        
-        // Get the current user from the session
-        UserSessionDto currentUser = (UserSessionDto) session.getAttribute(SessionKeys.user);
+        super.doFilter(request, response, chain);
         
         // If the user is not a warehouse person, redirect to home page
-        if (!currentUser.getRole().equals(UserRole.SalesPerson))
+        if (!this.currentUser.getRole().equals(UserRole.SalesPerson))
         {
             HttpServletResponse httpResponse = (HttpServletResponse) response;
             httpResponse.sendRedirect("/");
         }
+        
+        // Pass the request to other filters or the servlet
+        chain.doFilter(request, response);
     }
 
     @Override
     public void destroy()
     {
+        super.destroy();
     }
 }

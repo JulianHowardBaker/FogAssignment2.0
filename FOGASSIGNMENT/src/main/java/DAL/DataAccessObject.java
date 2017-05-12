@@ -9,12 +9,12 @@ public final class DataAccessObject {
     private static final String driver = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/fog";
     private static final String id = "root";
-    private static final String pw = "sean666";
+    private static final String pw = "root";
 
     public static Connection getConnection() {
         Connection con = null;
         try {
-            Class.forName(driver);
+            Class.forName(driver).newInstance();
             con = DriverManager.getConnection(URL, id, pw);  // The connection will be released upon program 
             System.out.println("You have successfully connected to " + URL + " database");
 
@@ -35,3 +35,4 @@ public final class DataAccessObject {
         }
     }
 }
+

@@ -28,6 +28,15 @@ public class User
         
     }
 
+    public User(String firstName, String lastName, String email, String password, UserRole role)
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+    }
+
     public User(int id, UserRole role, String firstName, String lastName, String email, String phone, String address, String zipcode, String city, String country)
     {
         this.id = id;
@@ -46,8 +55,12 @@ public class User
     {
         return id;
     }
-    
-    
+
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+
     public UserRole getRole()
     {
         return role;
@@ -96,6 +109,46 @@ public class User
     public void setPhone(String phone)
     {
         this.phone = phone;
+    }
+
+    public String getAddress()
+    {
+        return address;
+    }
+
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+
+    public String getZipcode()
+    {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode)
+    {
+        this.zipcode = zipcode;
+    }
+
+    public String getCity()
+    {
+        return city;
+    }
+
+    public void setCity(String city)
+    {
+        this.city = city;
+    }
+
+    public String getCountry()
+    {
+        return country;
+    }
+
+    public void setCountry(String country)
+    {
+        this.country = country;
     }
 
     public String getPassword()

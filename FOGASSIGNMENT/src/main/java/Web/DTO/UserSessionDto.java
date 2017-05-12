@@ -14,25 +14,39 @@ import Domain.UserRole;
  */
 public class UserSessionDto
 {
-    private int id;
-    private String email;
+    private Integer id;
     private UserRole role;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
+    private String address;
+    private String zipcode;
+    private String city;
+    private String country;
     
     public UserSessionDto(User user)
     {
         this.id = user.getId();
-        this.email = user.getEmail();
         this.role = user.getRole();
+        this.firstName = user.getFirstName();
+        this.lastName = user.getLastName();
+        this.email = user.getEmail();
+        this.phone = user.getPhone();
+        this.address = user.getAddress();
+        this.zipcode = user.getZipcode();
+        this.city = user.getCity();
+        this.country = user.getCountry();
     }
 
-    public int getId()
+    public String getLastName()
     {
-        return id;
+        return lastName;
     }
 
-    public void setId(int id)
+    public void setLastName(String lastName)
     {
-        this.id = id;
+        this.lastName = lastName;
     }
 
     public String getEmail()
@@ -43,6 +57,81 @@ public class UserSessionDto
     public void setEmail(String email)
     {
         this.email = email;
+    }
+
+    public String getPhone()
+    {
+        return phone;
+    }
+
+    public void setPhone(String phone)
+    {
+        this.phone = phone;
+    }
+
+    public String getAddress()
+    {
+        return address;
+    }
+
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+
+    public String getZipcode()
+    {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode)
+    {
+        this.zipcode = zipcode;
+    }
+
+    public String getCity()
+    {
+        return city;
+    }
+
+    public void setCity(String city)
+    {
+        this.city = city;
+    }
+
+    public String getCountry()
+    {
+        return country;
+    }
+
+    public void setCountry(String country)
+    {
+        this.country = country;
+    }
+
+    public UserSessionDto()
+    {
+        this.role = UserRole.Visitor;
+    }
+
+    public Integer getId()
+    {
+        return id;
+    }
+
+    public void setId(Integer id)
+    {
+        this.id = id;
+    }
+
+    public String getFirstName()
+    {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
     }
 
     public UserRole getRole()

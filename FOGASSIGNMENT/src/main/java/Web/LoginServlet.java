@@ -12,15 +12,11 @@ import Web.DTO.SessionKeys;
 import Web.DTO.UserSessionDto;
 import Web.DTO.ValidationResult;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-
 
 /**
  *
@@ -51,7 +47,7 @@ public class LoginServlet extends BaseServlet
             throws ServletException, IOException
     {
         response.setContentType("text/html;charset=UTF-8");
-        super.forward("/user/login.jsp", request, response);
+        super.forward("/views/user/login.jsp", request, response);
     }
 
     /**
@@ -77,6 +73,7 @@ public class LoginServlet extends BaseServlet
         {
             // TODO: Find a way to send errors back
             response.sendRedirect("/login");
+            return;
         }
         
         // Get user from repository
@@ -89,17 +86,19 @@ public class LoginServlet extends BaseServlet
         } catch (Exception ex)
         {
             response.sendRedirect("/error");
+            return;
         }
         
         if (user == null)
         {
             response.sendRedirect("/login");
+            return;
         }
         
         // At this point the user exists so we store him to the session
         HttpSession session = request.getSession();
         UserSessionDto sessionUser = new UserSessionDto(user);
-        session.setAttribute(SessionKeys.user, user);
+        session.setAttribute(SessionKeys.user, sessionUser);
         
         // Redirect to front page
         response.sendRedirect("/");
