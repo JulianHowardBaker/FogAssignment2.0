@@ -12,11 +12,10 @@ package Domain;
 public class ProductPart
 {
     private int id;
-    private ProductPartType type;
     private String name;
-    private String description;
-    private int stock;
     private StockUnit stockUnit;
-    private long price;
-    private Integer length;
+    private int stockCount;
+    private String description;
+    private Category category;
+    private float price;
 }
